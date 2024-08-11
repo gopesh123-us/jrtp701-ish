@@ -18,6 +18,7 @@ public class SSAWebOperationsRestController {
 	@GetMapping("/find/{ssn}")
 	public ResponseEntity<String> getStateBySSN(@PathVariable Integer ssn) {
 	    logger.info("*** input SSN *** "+String.valueOf(ssn));
+	    
 		// check 9 digits
 		if (String.valueOf(ssn).length() != 9) {
 			return new ResponseEntity<String>("Invalid SSN", HttpStatus.BAD_REQUEST);
