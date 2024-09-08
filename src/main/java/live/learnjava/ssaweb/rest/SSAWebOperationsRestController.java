@@ -1,6 +1,5 @@
 package live.learnjava.ssaweb.rest;
 
-import org.apache.juli.logging.LogFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -18,6 +17,7 @@ public class SSAWebOperationsRestController {
 	@GetMapping("/find/{ssn}")
 	public ResponseEntity<String> getStateBySSN(@PathVariable Integer ssn) {
 	    logger.info("*** input SSN *** "+String.valueOf(ssn));
+	    
 		// check 9 digits
 		if (String.valueOf(ssn).length() != 9) {
 			return new ResponseEntity<String>("Invalid SSN", HttpStatus.BAD_REQUEST);
